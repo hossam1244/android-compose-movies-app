@@ -61,9 +61,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     // retrofit
-    implementation(libs.retrofit)
-    implementation(libs.retrofitJsonConverter)
-    implementation(libs.okHttpLogging)
+//    implementation(libs.retrofit)
+//    implementation(libs.retrofitJsonConverter)
+//    implementation(libs.okHttpLogging)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
