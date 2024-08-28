@@ -71,6 +71,14 @@ class MainActivity : ComponentActivity() {
                 Column(
                     modifier = Modifier.fillMaxSize()
                 ) {
+                    LazyColumn {
+                        items(5) {
+                            Text(text = "Hello, World!")
+                        }
+                    }
+                    for (i in 0..3) {
+                        Text(text = "Hello, World! $i")
+                    }
                     Text(text = "Hello, World!")
                     if (2 < 3) {
                         Text(text = "Hello, World!")
@@ -83,7 +91,7 @@ class MainActivity : ComponentActivity() {
                         Text(text = "Hello, World!")
                     }
                     LazyColumn {
-                        items(100) {
+                        items(10) {
                             Text(text = "Hello, World!")
                         }
                     }
