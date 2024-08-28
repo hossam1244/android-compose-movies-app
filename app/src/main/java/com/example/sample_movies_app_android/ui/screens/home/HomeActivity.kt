@@ -89,7 +89,9 @@ class MainActivity : ComponentActivity() {
                 Column(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    ColorBox()
+                    ColorBox() { callBackMessage ->
+                        println("Message: $callBackMessage")
+                    }
 
                     Button(onClick = { /*TODO*/ }) {
                         Icon(
@@ -134,7 +136,7 @@ class MainActivity : ComponentActivity() {
 
 
     @Composable
-    fun ColorBox() {
+    fun ColorBox(callBackUpdate: (String) -> Unit) {
         var color = remember {
             mutableStateOf(Color.Yellow)
         }
@@ -145,6 +147,7 @@ class MainActivity : ComponentActivity() {
                 .background(color.value)
                 .clickable {
                     color.value = Color.Red
+                    callBackUpdate("Color Changed to Red")
                 }
         ) {
 
