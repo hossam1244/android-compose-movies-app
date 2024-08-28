@@ -14,11 +14,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
@@ -27,6 +30,10 @@ import androidx.compose.ui.unit.dp
 import com.example.sample_movies_app_android.ui.theme.MoviesAppTheme
 
 class MainActivity : ComponentActivity() {
+
+    private var count =
+        mutableStateOf(0)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -40,6 +47,12 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier.fillMaxSize()
                     ) {
+                        Text(text = count.value.toString())
+                        Button(onClick = {
+                            count.value++
+                        }) {
+                            Text("click me!")
+                        }
                         Text(text = "Hello, World!")
                         Text(text = "Hello, World!")
                         Row {
@@ -72,6 +85,13 @@ class MainActivity : ComponentActivity() {
                 Column(
                     modifier = Modifier.fillMaxSize()
                 ) {
+                    Button(onClick = { /*TODO*/ }) {
+                        Icon(
+                            imageVector = Icons.Default.Home,
+                            contentDescription = "Home"
+                        )
+                        Text(text = "Home")
+                    }
                     LazyColumn {
                         items(5) { index ->
                             Text(text = "Hello, World!")
