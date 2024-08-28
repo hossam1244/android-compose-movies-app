@@ -72,7 +72,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) {
                     LazyColumn {
-                        items(5) {
+                        items(5) { index ->
                             Text(text = "Hello, World!")
                         }
                     }
