@@ -27,6 +27,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.sample_movies_app_android.data.model.BottomNavigationItemModel
+import com.example.sample_movies_app_android.navigation.NavGraph
 import com.example.sample_movies_app_android.ui.theme.MoviesAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,14 +48,14 @@ class MainActivity : ComponentActivity() {
                                         icon = Icons.Default.Home
                                     ),
                                     BottomNavigationItemModel(
-                                        name = "Chat",
-                                        route = "chat",
+                                        name = "Favorites",
+                                        route = "favorites",
                                         icon = Icons.Default.Notifications,
                                         badgeCount = 23
                                     ),
                                     BottomNavigationItemModel(
-                                        name = "Settings",
-                                        route = "settings",
+                                        name = "Profile",
+                                        route = "profile",
                                         icon = Icons.Default.Settings,
                                         badgeCount = 214
                                     ),
@@ -66,7 +67,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                     ) {
-                       // Navigation(navController = navController)
+                        NavGraph(navController = navController)
                     }
             }
         }
