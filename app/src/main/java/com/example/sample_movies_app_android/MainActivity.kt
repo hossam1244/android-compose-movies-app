@@ -15,6 +15,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -99,8 +100,8 @@ class MainActivity : ComponentActivity() {
                 BottomNavigationItem(
                     selected = selected,
                     onClick = { onItemClick(item) },
-                    selectedContentColor = Color.Red,
-                    unselectedContentColor = Color.Gray,
+                    selectedContentColor = MaterialTheme.colorScheme.primary,
+                    unselectedContentColor =MaterialTheme.colorScheme.secondary,
                     icon = {
                         Column(horizontalAlignment = CenterHorizontally) {
                             if (item.badgeCount > 0) {
