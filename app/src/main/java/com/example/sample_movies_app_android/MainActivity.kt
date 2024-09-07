@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.BadgedBox
 import androidx.compose.material.BottomNavigation
@@ -11,8 +12,10 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -36,43 +39,43 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-                MoviesAppTheme {
-                    val navController = rememberNavController()
-                    Scaffold(
-                        bottomBar = {
-                            BottomNavigationBar(
-                                items = listOf(
-                                    BottomNavigationItemModel(
-                                        name = "Home",
-                                        route = "home",
-                                        icon = Icons.Default.Home
-                                    ),
-                                    BottomNavigationItemModel(
-                                        name = "Favorites",
-                                        route = "favorites",
-                                        icon = Icons.Default.Notifications,
-                                        badgeCount = 23
-                                    ),
-                                    BottomNavigationItemModel(
-                                        name = "Profile",
-                                        route = "profile",
-                                        icon = Icons.Default.Settings,
-                                        badgeCount = 214
-                                    ),
+            MoviesAppTheme {
+                val navController = rememberNavController()
+                Scaffold(
+                    modifier = Modifier.background(Color.LightGray),
+                    bottomBar = {
+                        BottomNavigationBar(
+                            items = listOf(
+                                BottomNavigationItemModel(
+                                    name = "Home",
+                                    route = "home",
+                                    icon = Icons.Default.Home
                                 ),
-                                navController = navController,
-                                onItemClick = {
-                                    navController.navigate(it.route)
-                                }
-                            )
-                        }
-                    ) {
-                        NavGraph(navController = navController)
+                                BottomNavigationItemModel(
+                                    name = "Favorites",
+                                    route = "favorites",
+                                    icon = Icons.Default.Favorite,
+                                    badgeCount = 0
+                                ),
+                                BottomNavigationItemModel(
+                                    name = "Profile",
+                                    route = "profile",
+                                    icon = Icons.Default.Person,
+                                    badgeCount = 0
+                                ),
+                            ),
+                            navController = navController,
+                            onItemClick = {
+                                navController.navigate(it.route)
+                            }
+                        )
                     }
+                ) {
+                    NavGraph(navController = navController)
+                }
             }
         }
     }
-
 
 
     @ExperimentalMaterialApi
@@ -86,7 +89,7 @@ class MainActivity : ComponentActivity() {
         val backStackEntry = navController.currentBackStackEntryAsState()
         BottomNavigation(
             modifier = modifier,
-            backgroundColor = Color.DarkGray,
+            backgroundColor = Color.White,
             elevation = 5.dp
         ) {
             items.forEach { item ->
@@ -94,7 +97,7 @@ class MainActivity : ComponentActivity() {
                 BottomNavigationItem(
                     selected = selected,
                     onClick = { onItemClick(item) },
-                    selectedContentColor = Color.Green,
+                    selectedContentColor = Color.Blue,
                     unselectedContentColor = Color.Gray,
                     icon = {
                         Column(horizontalAlignment = CenterHorizontally) {
@@ -115,13 +118,13 @@ class MainActivity : ComponentActivity() {
                                     contentDescription = item.name
                                 )
                             }
-                            if (selected) {
-                                Text(
-                                    text = item.name,
-                                    textAlign = TextAlign.Center,
-                                    fontSize = 10.sp
-                                )
-                            }
+                            // if (selected) {
+                            Text(
+                                text = item.name,
+                                textAlign = TextAlign.Center,
+                                fontSize = 10.sp
+                            )
+                            //}
                         }
                     }
                 )
