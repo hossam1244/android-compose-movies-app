@@ -1,5 +1,7 @@
 package com.example.sample_movies_app_android.ui.component
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -10,10 +12,19 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+
+// example of reusable modifier
+// it's not being used in the app, but it's an example for a future-usage
+val reusableModifier = Modifier
+    .fillMaxWidth()
+    .background(Color.Red)
+    .padding(12.dp)
+
 
 @Composable
 fun MovieCardItem() {
@@ -36,7 +47,7 @@ fun MovieCardItem() {
         )
 
         Text(
-            text = "Filled",
+            text = "Breaking Bad",
             modifier = Modifier
                 .padding(16.dp),
             textAlign = TextAlign.Center,
