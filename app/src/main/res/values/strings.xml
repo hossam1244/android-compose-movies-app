@@ -2,4 +2,6 @@
     <string name="app_name">sample_movies_app_android</string>
     <string name="favorite_icon_desc">favorite icon description</string>
     <string name="movies">Movies</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
 </resources>

@@ -21,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,6 +31,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.sample_movies_app_android.data.model.BottomNavigationItemModel
 import com.example.sample_movies_app_android.navigation.NavGraph
 import com.example.sample_movies_app_android.ui.theme.MoviesAppTheme
+import com.example.sample_movies_app_android.utils.Constants.FAVORITES
+import com.example.sample_movies_app_android.utils.Constants.HOME
+import com.example.sample_movies_app_android.utils.Constants.PROFILE
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterialApi::class)
@@ -45,19 +49,19 @@ class MainActivity : ComponentActivity() {
                         BottomNavigationBar(
                             items = listOf(
                                 BottomNavigationItemModel(
-                                    name = "Movies",
-                                    route = "home",
+                                    name = stringResource(R.string.movies),
+                                    route = HOME,
                                     icon = Icons.Default.Home
                                 ),
                                 BottomNavigationItemModel(
-                                    name = "Favorites",
-                                    route = "favorites",
+                                    name = stringResource(R.string.favorites),
+                                    route = FAVORITES,
                                     icon = Icons.Default.Favorite,
                                     badgeCount = 0
                                 ),
                                 BottomNavigationItemModel(
-                                    name = "Profile",
-                                    route = "profile",
+                                    name = stringResource(R.string.profile),
+                                    route = PROFILE,
                                     icon = Icons.Default.Person,
                                     badgeCount = 0
                                 ),
