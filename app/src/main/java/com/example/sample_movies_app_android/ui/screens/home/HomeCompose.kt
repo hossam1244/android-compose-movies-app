@@ -9,9 +9,9 @@ import com.example.sample_movies_app_android.ui.component.MovieCardItem
 @Composable
 fun HomeScreen() {
     LazyColumn {
-       items(10) {
-           MovieCardItem()
-       }
+        items(10) {
+            MovieCardItem(imageUrl = null, movieName = null)
+        }
     }
 
 }
