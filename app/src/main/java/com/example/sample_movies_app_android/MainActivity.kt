@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
                         BottomNavigationBar(
                             items = listOf(
                                 BottomNavigationItemModel(
-                                    name = "Home",
+                                    name = "Movies",
                                     route = "home",
                                     icon = Icons.Default.Home
                                 ),
@@ -97,7 +97,7 @@ class MainActivity : ComponentActivity() {
                 BottomNavigationItem(
                     selected = selected,
                     onClick = { onItemClick(item) },
-                    selectedContentColor = Color.Blue,
+                    selectedContentColor = Color.Red,
                     unselectedContentColor = Color.Gray,
                     icon = {
                         Column(horizontalAlignment = CenterHorizontally) {
