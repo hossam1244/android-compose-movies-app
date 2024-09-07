@@ -12,7 +12,10 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.sample_movies_app_android.R
+import com.example.sample_movies_app_android.ui.component.CustomTopAppBar
 import com.example.sample_movies_app_android.ui.component.MovieCardItem
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -20,15 +23,7 @@ import com.example.sample_movies_app_android.ui.component.MovieCardItem
 fun HomeScreen() {
     Scaffold(
         topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
-                ),
-                title = {
-                    Text("Movies")
-                }
-            )
+            CustomTopAppBar(appBarName = stringResource(R.string.movies))
         },
     ) { innerPadding ->
         MoviesList(innerPadding)
