@@ -103,13 +103,20 @@ fun ProfileScreen() {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(imageVector = Icons.Default.Settings, contentDescription = "")
+                    Icon(
+                        imageVector = Icons.Default.Settings, contentDescription = "",
+                        tint = Color.White,
+                    )
                     Text(
                         text = "Settings",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White
                     )
-                    Icon(imageVector = Icons.Default.ArrowForward, contentDescription = "")
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "",
+                        tint = Color.White,
+                    )
                 }
             }
 
@@ -130,13 +137,21 @@ fun ProfileScreen() {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(imageVector = Icons.Default.Lock, contentDescription = "")
+                    Icon(
+                        imageVector = Icons.Default.Lock,
+                        contentDescription = "",
+                        tint = Color.White,
+                    )
                     Text(
                         text = "Logout",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White
                     )
-                    Icon(imageVector = Icons.Default.ArrowForward, contentDescription = "")
+                    Icon(
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "",
+                        tint = Color.White,
+                    )
                 }
             }
 
