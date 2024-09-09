@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.sample_movies_app_android.R
 import com.example.sample_movies_app_android.ui.component.CustomTopAppBar
+import com.example.sample_movies_app_android.ui.component.ProfileBoxItem
 import com.example.sample_movies_app_android.ui.screens.home.MoviesList
 
 
@@ -86,76 +87,14 @@ fun ProfileScreen() {
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.primary)
             )
-
-            Box(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))
-                    .padding(top = 20.dp, start = 20.dp, end = 20.dp)
-                    .fillMaxWidth()
-
-            ) {
-                Row(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(15.dp, 15.dp, 15.dp, 15.dp))
-                        .background(MaterialTheme.colorScheme.primary)
-                        .fillMaxWidth()
-                        .padding(20.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Settings, contentDescription = "",
-                        tint = Color.White,
-                    )
-                    Text(
-                        text = "Settings",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = Color.White
-                    )
-                    Icon(
-                        imageVector = Icons.Default.ArrowForward,
-                        contentDescription = "",
-                        tint = Color.White,
-                    )
-                }
-            }
-
-
-            Box(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))
-                    .padding(top = 20.dp, start = 20.dp, end = 20.dp)
-                    .fillMaxWidth()
-
-            ) {
-                Row(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(15.dp, 15.dp, 15.dp, 15.dp))
-                        .background(MaterialTheme.colorScheme.primary)
-                        .fillMaxWidth()
-                        .padding(20.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Lock,
-                        contentDescription = "",
-                        tint = Color.White,
-                    )
-                    Text(
-                        text = "Logout",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = Color.White
-                    )
-                    Icon(
-                        imageVector = Icons.Default.ArrowForward,
-                        contentDescription = "",
-                        tint = Color.White,
-                    )
-                }
-            }
-
-
+            ProfileBoxItem(
+                imageVector = Icons.Default.Settings,
+                text = "Settings"
+            )
+            ProfileBoxItem(
+                imageVector = Icons.Default.Lock,
+                text = "Logout"
+            )
         }
     }
 
