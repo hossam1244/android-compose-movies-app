@@ -28,8 +28,6 @@ fun ProfileScreen() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Profile Screen")
-        // create image avatar
         AsyncImage(
             model = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH44asUcIXZa8taXFp2OlJzx7SGXDhwqDUsoD7NMgJ2Vj12CY0mV2QpgGUy_4FbKotJTA&usqp=CAU",
             contentDescription = "Profile Image",
