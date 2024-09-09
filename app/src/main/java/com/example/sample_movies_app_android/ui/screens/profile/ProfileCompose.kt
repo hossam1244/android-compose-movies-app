@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -28,6 +29,7 @@ fun ProfileScreen() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.height(20.dp))
         AsyncImage(
             model = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH44asUcIXZa8taXFp2OlJzx7SGXDhwqDUsoD7NMgJ2Vj12CY0mV2QpgGUy_4FbKotJTA&usqp=CAU",
             contentDescription = "Profile Image",
