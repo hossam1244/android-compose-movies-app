@@ -6,7 +6,7 @@ import android.app.Application
  *  MVVM Architecture
  *  Bottom Navigation Bar ( done )
  *  Side Menu
- *  Navigation Component
+ *  Navigation Component ( done, but still need to try different scenarios within it )
  *  List of Movies
  *  Movie Details
  *  Movie Search
