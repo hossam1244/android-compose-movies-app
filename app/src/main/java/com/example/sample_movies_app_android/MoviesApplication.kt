@@ -4,7 +4,7 @@ import android.app.Application
 
 /**
  *  MVVM Architecture
- *  Bottom Navigation Bar
+ *  Bottom Navigation Bar ( done )
  *  Side Menu
  *  Navigation Component
  *  List of Movies
