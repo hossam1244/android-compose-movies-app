@@ -31,7 +31,7 @@ fun MoviesList(padding: PaddingValues) {
     LazyColumn(
       modifier = Modifier.padding(top = 70.dp, bottom = 70.dp)
     ) {
-        items(10) {
+        items(10, key = { index -> index }) {
             MovieCardItem(imageUrl = null, movieName = null)
         }
     }
