@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.sample_movies_app_android.ui.screens.favorite.FavoriteScreen
 import com.example.sample_movies_app_android.ui.screens.home.HomeScreen
+import com.example.sample_movies_app_android.ui.screens.login.LoginScreen
 import com.example.sample_movies_app_android.ui.screens.profile.ProfileScreen
 
 
@@ -18,13 +19,25 @@ import com.example.sample_movies_app_android.ui.screens.profile.ProfileScreen
 fun NavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = NavRoute.Home.path
+        startDestination = NavRoute.Login.path
     ) {
+        addLoginScreen(navController, this)
         addHomeScreen(navController, this)
         addFavoritesScreen(navController, this)
         addProfileScreen(navController, this)
     }
 }
+
+
+private fun addLoginScreen(
+    navController: NavHostController,
+    navGraphBuilder: NavGraphBuilder
+) {
+    navGraphBuilder.composable(route = NavRoute.Login.path) {
+        LoginScreen()
+    }
+}
+
 
 private fun addHomeScreen(
     navController: NavHostController,

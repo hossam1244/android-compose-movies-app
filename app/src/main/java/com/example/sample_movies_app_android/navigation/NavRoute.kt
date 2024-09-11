@@ -2,6 +2,7 @@ package com.example.sample_movies_app_android.navigation
 
 sealed class NavRoute(val path: String) {
 
+    object Login : NavRoute("login")
     object Home : NavRoute("home")
     object Favorites : NavRoute("favorites")
     object Profile : NavRoute("profile")
