@@ -1,6 +1,7 @@
 package com.example.sample_movies_app_android.ui.screens.login
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -26,10 +27,24 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun LoginScreen() {
     val context = LocalContext.current
+    // two ways of declaring mutable state
+    // 1. using remember
+    // 2. using rememberSaveable ( to save the state when the screen is destroyed and recreated)
+    var username: MutableState<String> = rememberSaveable { mutableStateOf("") }
+    var passWord: MutableState<String> = rememberSaveable { mutableStateOf("") }
+
+    StatelessLoginScreen(username, passWord, context)
+}
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@Composable
+private fun StatelessLoginScreen(
+    userName: MutableState<String>,
+    passWord: MutableState<String>,
+    context: Context
+) {
 
     Scaffold {
         Column(
@@ -38,15 +53,11 @@ fun LoginScreen() {
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-            // two ways of declaring mutable state
-            // 1. using remember
-            // 2. using rememberSaveable ( to save the state when the screen is destroyed and recreated)
-            var userName by remember { mutableStateOf("") }
-            var passWord: MutableState<String> = rememberSaveable { mutableStateOf("") }
+
             Spacer(modifier = Modifier.height(40.dp))
             TextField(
-                value = userName,
-                onValueChange = { userName = it },
+                value = userName.value,
+                onValueChange = { userName.value = it },
                 label = { Text("Username") }
             )
             Spacer(modifier = Modifier.height(20.dp))
@@ -59,7 +70,7 @@ fun LoginScreen() {
             )
             Spacer(modifier = Modifier.height(20.dp))
             Button(onClick = {
-                if (userName.isNotEmpty() && passWord.value.isNotEmpty()) {
+                if (userName.value.isNotEmpty() && passWord.value.isNotEmpty()) {
                     // show toast
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
                 } else {
