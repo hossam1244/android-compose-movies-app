@@ -1,4 +1,4 @@
-package com.example.sample_movies_app_android.ui.screens.home
+package com.example.sample_movies_app_android.ui.screens.movies
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -15,7 +15,7 @@ import com.example.sample_movies_app_android.ui.component.MovieCardItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun MoviesListCompose() {
     Scaffold(
         topBar = {
             CustomTopAppBar(appBarName = stringResource(R.string.movies))

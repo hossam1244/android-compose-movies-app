@@ -1,16 +1,12 @@
 package com.example.sample_movies_app_android.navigation
 
-import android.provider.ContactsContract.Profile
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavArgument
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
 import com.example.sample_movies_app_android.ui.screens.favorite.FavoriteScreen
-import com.example.sample_movies_app_android.ui.screens.home.HomeScreen
+import com.example.sample_movies_app_android.ui.screens.movies.MoviesListCompose
 import com.example.sample_movies_app_android.ui.screens.login.LoginScreen
 import com.example.sample_movies_app_android.ui.screens.profile.ProfileScreen
 
@@ -22,7 +18,7 @@ fun NavGraph(navController: NavHostController) {
         startDestination = NavRoute.Login.path
     ) {
         addLoginScreen(navController, this)
-        addHomeScreen(navController, this)
+        addMoviesScreen(navController, this)
         addFavoritesScreen(navController, this)
         addProfileScreen(navController, this)
     }
@@ -39,12 +35,12 @@ private fun addLoginScreen(
 }
 
 
-private fun addHomeScreen(
+private fun addMoviesScreen(
     navController: NavHostController,
     navGraphBuilder: NavGraphBuilder
 ) {
-    navGraphBuilder.composable(route = NavRoute.Home.path) {
-        HomeScreen()
+    navGraphBuilder.composable(route = NavRoute.Movies.path) {
+        MoviesListCompose()
     }
 }
 

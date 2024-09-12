@@ -33,7 +33,7 @@ import com.example.sample_movies_app_android.data.model.BottomNavigationItemMode
 import com.example.sample_movies_app_android.navigation.NavGraph
 import com.example.sample_movies_app_android.ui.theme.MoviesAppTheme
 import com.example.sample_movies_app_android.utils.Constants.FAVORITES
-import com.example.sample_movies_app_android.utils.Constants.HOME
+import com.example.sample_movies_app_android.utils.Constants.MOVIES
 import com.example.sample_movies_app_android.utils.Constants.PROFILE
 
 class MainActivity : ComponentActivity() {
@@ -44,38 +44,39 @@ class MainActivity : ComponentActivity() {
         setContent {
             MoviesAppTheme {
                 val navController = rememberNavController()
-                Scaffold(
-                    modifier = Modifier.background(Color.LightGray),
-                    bottomBar = {
-                        BottomNavigationBar(
-                            items = listOf(
-                                BottomNavigationItemModel(
-                                    name = stringResource(R.string.movies),
-                                    route = HOME,
-                                    icon = Icons.Default.Home
-                                ),
-                                BottomNavigationItemModel(
-                                    name = stringResource(R.string.favorites),
-                                    route = FAVORITES,
-                                    icon = Icons.Default.Favorite,
-                                    badgeCount = 0
-                                ),
-                                BottomNavigationItemModel(
-                                    name = stringResource(R.string.profile),
-                                    route = PROFILE,
-                                    icon = Icons.Default.Person,
-                                    badgeCount = 0
-                                ),
-                            ),
-                            navController = navController,
-                            onItemClick = {
-                                navController.navigate(it.route)
-                            }
-                        )
-                    }
-                ) {
-                    NavGraph(navController = navController)
-                }
+                NavGraph(navController = navController)
+//                Scaffold(
+//                    modifier = Modifier.background(Color.LightGray),
+//                    bottomBar = {
+//                        BottomNavigationBar(
+//                            items = listOf(
+//                                BottomNavigationItemModel(
+//                                    name = stringResource(R.string.movies),
+//                                    route = MOVIES,
+//                                    icon = Icons.Default.Home
+//                                ),
+//                                BottomNavigationItemModel(
+//                                    name = stringResource(R.string.favorites),
+//                                    route = FAVORITES,
+//                                    icon = Icons.Default.Favorite,
+//                                    badgeCount = 0
+//                                ),
+//                                BottomNavigationItemModel(
+//                                    name = stringResource(R.string.profile),
+//                                    route = PROFILE,
+//                                    icon = Icons.Default.Person,
+//                                    badgeCount = 0
+//                                ),
+//                            ),
+//                            navController = navController,
+//                            onItemClick = {
+//                                navController.navigate(it.route)
+//                            }
+//                        )
+//                    }
+//                ) {
+//                    NavGraph(navController = navController)
+//                }
             }
         }
     }
