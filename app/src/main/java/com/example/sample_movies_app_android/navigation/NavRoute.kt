@@ -6,6 +6,7 @@ sealed class NavRoute(val path: String) {
     object Movies : NavRoute("movies")
     object Favorites : NavRoute("favorites")
     object Profile : NavRoute("profile")
+    object MainHomeScreen : NavRoute("mainHomeScreen")
 
 
     // build navigation path (for screen navigation)

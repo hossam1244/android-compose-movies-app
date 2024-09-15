@@ -82,58 +82,6 @@ class MainActivity : ComponentActivity() {
     }
 
 
-    @ExperimentalMaterialApi
-    @Composable
-    fun BottomNavigationBar(
-        items: List<BottomNavigationItemModel>,
-        navController: NavController,
-        modifier: Modifier = Modifier,
-        onItemClick: (BottomNavigationItemModel) -> Unit
-    ) {
-        val backStackEntry = navController.currentBackStackEntryAsState()
-        BottomNavigation(
-            modifier = modifier,
-            backgroundColor = Color.White,
-            elevation = 5.dp
-        ) {
-            items.forEach { item ->
-                val selected = item.route == backStackEntry.value?.destination?.route
-                BottomNavigationItem(
-                    selected = selected,
-                    onClick = { onItemClick(item) },
-                    selectedContentColor = MaterialTheme.colorScheme.primary,
-                    unselectedContentColor =MaterialTheme.colorScheme.secondary,
-                    icon = {
-                        Column(horizontalAlignment = CenterHorizontally) {
-                            if (item.badgeCount > 0) {
-                                BadgedBox(
-                                    badge = {
-                                        Text(text = item.badgeCount.toString())
-                                    }
-                                ) {
-                                    Icon(
-                                        imageVector = item.icon,
-                                        contentDescription = item.name
-                                    )
-                                }
-                            } else {
-                                Icon(
-                                    imageVector = item.icon,
-                                    contentDescription = item.name
-                                )
-                            }
-                            // if (selected) {
-                            Text(
-                                text = item.name,
-                                textAlign = TextAlign.Center,
-                                fontSize = 10.sp
-                            )
-                            //}
-                        }
-                    }
-                )
-            }
-        }
-    }
+
 
 }

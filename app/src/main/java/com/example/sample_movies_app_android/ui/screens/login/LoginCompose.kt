@@ -28,7 +28,9 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    navigateToMainHomeScreen: () -> Unit
+) {
     val context = LocalContext.current
     // two ways of declaring mutable state
     // 1. using remember
@@ -36,14 +38,15 @@ fun LoginScreen() {
     var username: MutableState<String> = rememberSaveable { mutableStateOf("") }
     var passWord: MutableState<String> = rememberSaveable { mutableStateOf("") }
 
-    StatelessLoginScreen(username, passWord, context)
+    StatelessLoginScreen(username, passWord, context, navigateToMainHomeScreen)
 }
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 private fun StatelessLoginScreen(
     userName: MutableState<String>,
     passWord: MutableState<String>,
-    context: Context
+    context: Context,
+    navigateToMainHomeScreen: () -> Unit
 ) {
 
     Scaffold {
@@ -53,7 +56,6 @@ private fun StatelessLoginScreen(
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-
             Spacer(modifier = Modifier.height(40.dp))
             TextField(
                 value = userName.value,
@@ -73,6 +75,7 @@ private fun StatelessLoginScreen(
                 if (userName.value.isNotEmpty() && passWord.value.isNotEmpty()) {
                     // show toast
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
+                    navigateToMainHomeScreen()
                 } else {
                     Toast.makeText(
                         context,
