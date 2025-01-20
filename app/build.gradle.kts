@@ -59,11 +59,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    // retrofit
-//    implementation(libs.retrofit)
-//    implementation(libs.retrofitJsonConverter)
-//    implementation(libs.okHttpLogging)
-
 
 
 
@@ -71,8 +66,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation("androidx.navigation:navigation-compose:2.7.7")
-    implementation("androidx.compose.material:material:1.6.8")
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.material)
     implementation("io.coil-kt:coil:2.7.0")
     implementation("io.coil-kt:coil-compose:2.7.0")
 

@@ -17,6 +17,8 @@ retrofitJsonConverter = "2.9.0"
 okHttpLogging = "5.0.0-alpha.2"
 roomCompiler = "2.6.1"
 roomRuntime = "2.6.1"
+navigationCompose = "2.8.5"
+composeMaterial = "1.7.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,10 +41,8 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-retrofit = { group = "com.squareup.retrofit2:retrofit", name = "retrofit", version.ref = "retrofit" }
-retrofitJsonConverter = { group = "com.squareup.retrofit2:converter-gson", name = "retrofitJsonConverter", version.ref = "retrofitJsonConverter" }
-okHttpLogging = { group = "com.squareup.okhttp3:logging-interceptor", name = "okHttpLogging", version.ref = "okHttpLogging" }
-
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-compose-material = { group = "androidx.compose.material", name = "material", version.ref = "composeMaterial" }
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
